@@ -144,11 +144,11 @@ const RestaurantOnline = ({ resTitle, resData }) => {
         <div>
             <div
                 style={{ backgroundImage: `url(${search_banner})` }}
-                className="mt-6 flex items-center justify-center h-[30vh] sm:h-[35vh] bg-no-repeat bg-cover bg-center relative"
+                className="mt-6 flex items-center justify-center h-[35vh] sm:h-[45vh] bg-no-repeat bg-cover bg-center relative"
             >
-                <div className="absolute top-0 w-full h-full bg-black opacity-35 z-10"></div>
+                <div className="absolute top-0 w-full h-full bg-black opacity-35 z-10 "></div>
 
-                <div className="text-center z-20">
+                <div className="text-center z-20 py-5">
                     <h2 className=" text-white text-2xl sm:text-3xl font-extrabold tracking-wide">{resTitle}</h2>
                     <input
                         type="text"
@@ -161,18 +161,16 @@ const RestaurantOnline = ({ resTitle, resData }) => {
                     />
                 </div>
             </div>
-            <div style={{marginLeft: "100px", marginRight: "100px"}} >
+            <div className="md:mx-[100px]" >
                 {/* ***** filter with button section ***** */}
-                <div className="p-4 flex justify-items-end">
+                <div className="px-1 pt-4 flex justify-items-end overflow-x-scroll mx-4" id="horizontal-scroll" >
                 { 
                     filterCategories.map((category) => (
-                        
-                        <div className={`border-slate-300 border-[1px] py-2 px-3 rounded-md mb-2 mr-2 hover:bg-gray-300 ${activeFilter == category.filter}
+                        <div className={`border-slate-300 border-[1px] py-2 px-3 min-w-36 md:min-w-20 rounded-md mb-2 mr-2 hover:bg-gray-300 ${activeFilter == category.filter}
                             ? "bg-bg-gray-300"
                             : "bg-white"}`}
                         >
-                            <button onClick={category.function}
-                            >
+                            <button onClick={category.function}>
                                {category.name}
                             </button>
                     
